@@ -28,29 +28,28 @@
   <div class="logo">⛪</div>
   <h1>REDIL</h1>
   <p>Sistema de Gestión de Grupos Familiares</p>
-  <button class="btn" onclick="irAlSistema()">Ingresar al Sistema</button>
+  <button id="mainBtn" class="btn" onclick="irAlSistema()">Ingresar al Sistema</button>
   <div class="spinner" id="spin"></div>
   <div class="brand">Desarrollado por Total App GT</div>
 </div>
+
 <script>
-// ╔══════════════════════════════════════════════════════╗
-// ║  CONFIGURACIÓN DEL PUENTE — EDITA SOLO ESTA LÍNEA  ║
-// ╚══════════════════════════════════════════════════════╝
-var URL_SISTEMA = https://script.google.com/macros/s/AKfycby0CPxmvmVM-p9GwKtmq-00lptUUIJ8ijiNSqHJgKNxnt5DIAR9_Nk3kW9VN122FQi2qw/exec';
-// ══════════════════════════════════════════════════════
-// No tocar nada debajo de esta línea
+// URL de tu implementación (Corregida con comillas)
+var URL_SISTEMA = 'https://script.google.com/macros/s/AKfycby0CPxmvmVM-p9GwKtmq-00lptUUIJ8ijiNSqHJgKNxnt5DIAR9_Nk3kW9VN122FQi2qw/exec';
+
 function irAlSistema(){
-  if(!URL_SISTEMA||URL_SISTEMA==='https://script.google.com/macros/s/AKfycby0CPxmvmVM-p9GwKtmq-00lptUUIJ8ijiNSqHJgKNxnt5DIAR9_Nk3kW9VN122FQi2qw/exec'){
-    alert('⚠ Configura la URL del sistema en el archivo puente_redirect.html');
-    return;
-  }
-  document.getElementById('spin').style.display='block';
-  setTimeout(function(){window.location.href=URL_SISTEMA;},400);
+  // Mostrar spinner y ocultar botón
+  document.getElementById('spin').style.display = 'block';
+  document.getElementById('mainBtn').style.display = 'none';
+  
+  // Redirigir
+  window.location.href = URL_SISTEMA;
 }
-// Auto-redirect si ya está configurado
-if(URL_SISTEMA&&URL_SISTEMA!=='https://script.google.com/macros/s/AKfycby0CPxmvmVM-p9GwKtmq-00lptUUIJ8ijiNSqHJgKNxnt5DIAR9_Nk3kW9VN122FQi2qw/exec'){
-  setTimeout(irAlSistema,1200);
-}
+
+// Auto-redirección tras 1.5 segundos para que el usuario vea la marca
+window.onload = function() {
+  setTimeout(irAlSistema, 1500);
+};
 </script>
 </body>
 </html>
