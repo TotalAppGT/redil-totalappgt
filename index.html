@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>REDIL — Total App GT</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#1a3a5c,#2563a8);
+    height:100vh;display:flex;align-items:center;justify-content:center;color:#fff}
+  .card{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border-radius:20px;
+    padding:40px;text-align:center;max-width:420px;width:90%;border:1px solid rgba(255,255,255,.2)}
+  .logo{font-size:52px;margin-bottom:16px}
+  h1{font-size:28px;font-weight:900;margin-bottom:8px}
+  p{font-size:14px;opacity:.8;margin-bottom:24px}
+  .btn{display:inline-block;background:#fff;color:#1a3a5c;font-weight:800;font-size:15px;
+    padding:14px 32px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;
+    transition:.2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .spinner{display:none;width:32px;height:32px;border:3px solid rgba(255,255,255,.3);
+    border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;margin:16px auto 0}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .brand{font-size:11px;opacity:.4;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">⛪</div>
+  <h1>REDIL</h1>
+  <p>Sistema de Gestión de Grupos Familiares</p>
+  <button class="btn" onclick="irAlSistema()">Ingresar al Sistema</button>
+  <div class="spinner" id="spin"></div>
+  <div class="brand">Desarrollado por Total App GT</div>
+</div>
+<script>
+// ╔══════════════════════════════════════════════════════╗
+// ║  CONFIGURACIÓN DEL PUENTE — EDITA SOLO ESTA LÍNEA  ║
+// ╚══════════════════════════════════════════════════════╝
+var URL_SISTEMA = https://script.google.com/macros/s/AKfycby0CPxmvmVM-p9GwKtmq-00lptUUIJ8ijiNSqHJgKNxnt5DIAR9_Nk3kW9VN122FQi2qw/exec';
+// ══════════════════════════════════════════════════════
+// No tocar nada debajo de esta línea
+function irAlSistema(){
+  if(!URL_SISTEMA||URL_SISTEMA==='https://script.google.com/macros/s/AKfycby0CPxmvmVM-p9GwKtmq-00lptUUIJ8ijiNSqHJgKNxnt5DIAR9_Nk3kW9VN122FQi2qw/exec'){
+    alert('⚠ Configura la URL del sistema en el archivo puente_redirect.html');
+    return;
+  }
+  document.getElementById('spin').style.display='block';
+  setTimeout(function(){window.location.href=URL_SISTEMA;},400);
+}
+// Auto-redirect si ya está configurado
+if(URL_SISTEMA&&URL_SISTEMA!=='https://script.google.com/macros/s/AKfycby0CPxmvmVM-p9GwKtmq-00lptUUIJ8ijiNSqHJgKNxnt5DIAR9_Nk3kW9VN122FQi2qw/exec'){
+  setTimeout(irAlSistema,1200);
+}
+</script>
+</body>
+</html>
