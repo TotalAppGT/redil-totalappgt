@@ -1,53 +1,34 @@
-<script>
-  var URL_CLIENTE = 'ESCRIBE_AQUI_EL_LINK_DE_GOOGLE_SCRIPT';
-</script>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>REDIL — Total App GT</title>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#1a3a5c,#2563a8);
-    height:100vh;display:flex;align-items:center;justify-content:center;color:#fff}
-  .card{background:rgba(255,255,255,.1);backdrop-filter:blur(15px);border-radius:24px;
-    padding:50px 40px;text-align:center;max-width:420px;width:90%;border:1px solid rgba(255,255,255,.2);
-    box-shadow:0 25px 50px rgba(0,0,0,0.3)}
-  .logo-container{width:110px;height:110px;margin:0 auto 20px;background:#fff;border-radius:20px;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,0.2)}
-  .logo-img{width:85%;height:85%;object-fit:contain}
-  h1{font-size:32px;font-weight:900;margin-bottom:4px;letter-spacing:1px}
-  .subtitle{font-size:16px;opacity:.9;margin-bottom:30px;color:#00d4ff}
-  .spinner{width:40px;height:40px;border:4px solid rgba(255,255,255,.1);
-    border-top-color:#00d4ff;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 15px}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .loading-text{font-size:13px;font-weight:700;text-transform:uppercase;animation:pulse 1.5s infinite}
-  @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
-  .brand{font-size:11px;opacity:.4;margin-top:40px}
-</style>
+  <meta charset="UTF-8">
+  <title>REDIL — Total App GT</title>
+  <link rel="stylesheet" href="https://totalappgt.github.io/redil-totalappgt/estilos-centrales.css">
 </head>
 <body>
-<div class="card">
-  <div class="logo-container">
-    <img src="https://lh3.googleusercontent.com/d/12XCmz_u8yYRaNpiM8ZIgPTjHIzsYialc" alt="Logo" class="logo-img">
+  <div class="card">
+    <div class="logo-container">
+      <img src="https://drive.google.com/thumbnail?id=12XCmz_u8yYRaNpiM8ZIgPTjHIzsYialc&sz=w200" class="logo-img">
+    </div>
+    <h1>REDIL</h1>
+    <div class="subtitle">Sistema de Gestión Profesional</div>
+    <div class="spinner"></div>
+    <div class="loading-text">Cargando sistema...</div>
+    <div class="brand">Desarrollado por <strong>Total App GT</strong></div>
   </div>
-  <h1>REDIL</h1>
-  <div class="subtitle">Sistema de Gestión Profesional</div>
-  <div class="spinner"></div>
-  <div class="loading-text">Cargando sistema...</div>
-  <div class="brand">Desarrollado por <strong>Total App GT</strong></div>
-</div>
 
-<script>
-window.onload = function() {
-  if(typeof URL_CLIENTE !== 'undefined' && URL_CLIENTE.startsWith('http')){
-    setTimeout(function(){ window.location.href = URL_CLIENTE; }, 2000);
-  } else {
-    console.error("URL no configurada correctamente.");
-  }
-};
-</script>
+  <script>
+    /* ==========================================
+       CONFIGURACIÓN: SOLO PEGA EL LINK AQUÍ 
+       ========================================== */
+    var URL_SISTEMA = 'AQUÍ_VA_EL_LINK_DE_GOOGLE_SCRIPT';
+    /* ========================================== */
+
+    window.onload = function() {
+      if(URL_SISTEMA.startsWith('http')){
+        setTimeout(function(){ window.location.href = URL_SISTEMA; }, 2000);
+      }
+    };
+  </script>
 </body>
 </html>
